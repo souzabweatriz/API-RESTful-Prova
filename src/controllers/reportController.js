@@ -4,8 +4,7 @@ const professorModel = require("../models/professorModel");
 
 const exportProfessorPDF = async (req, res) => {
     try {
-        
-        const professores = await professorModel.getProfessor()
+        const professores = await professorModel.getProfessores()
 
         res.setHeader("Content-Type", "application/pdf");
         res.setHeader("Content-Disposition", "inline; filename=professores.pdf")
@@ -14,7 +13,7 @@ const exportProfessorPDF = async (req, res) => {
         doc.pipe(res);
 
         //Titulo
-        doc.fontSize(20).text("Relatorio de Professores", { align: "center" });
+        doc.fontSize(20).text("Relatório de Professores", { align: "center" });
         doc.moveDown();
 
         //Cabeçalho

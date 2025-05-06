@@ -9,7 +9,7 @@ const getAllProfessores = async (req, res) => {
         res.status(404).json({ message: 'Erro ao buscar Professores' });
     }
 };
-;
+
 
 const getProfessorById = async (req, res) => {
     try {

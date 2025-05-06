@@ -26,4 +26,19 @@ INSERT INTO disciplinas (professores_id, materia) VALUES
 (1, 'Back-End'),
 (2, 'Mobile');
 
+
 SELECT * FROM disciplinas;
+
+INSERT INTO professores (nome, email) VALUES 
+    ('Pereira', 'pereirao@email.com'),
+    ('Ivonete', 'nenete@email.com'),
+
+    INSERT INTO professores (nome, email) VALUES 
+    ('Alécio Cau', 'aleciao@email.com'),
+    ('Tamires', 'tamires@email.com');
+
+    INSERT INTO disciplinas (professores_id, materia) VALUES 
+(5, 'Matemática'),
+(6, 'Português'),
+(9, 'Física'),
+(10, 'Biologia');

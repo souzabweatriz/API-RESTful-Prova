@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const professorModel = require("../models/professorModel");
 const apiKeyMiddleware = require("../config/apiKey");
 const upload = require("../config/upload.js"); 
 const professorController = require("../controllers/professorController.js")

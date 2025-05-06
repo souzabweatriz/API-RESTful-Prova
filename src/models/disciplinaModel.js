@@ -13,7 +13,7 @@ const getDisciplinaById = async (id) => {
 
 const createDisciplina = async (professores_id, materia) => {
     const result = await pool.query(
-        "INSERT INTO professores (professores_id, materia) VALUES ($1, $2) RETURNING *",
+        "INSERT INTO disciplinas (professores_id, materia ) VALUES ($1, $2) RETURNING *",
         [professores_id, materia]
     );
     return result.rows[0];

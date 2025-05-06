@@ -1,8 +1,16 @@
 const pool = require("../config/database");
 
-const getProfessores = async () => {
-    const result = await pool.query("SELECT * FROM professores");
-    return result.rows;
+const getProfessores = async (nome) => {
+    if (nome) {
+        const result = await pool.query(
+            'SELECT * FROM professores WHERE nome ILIKE $1',
+            [`%${nome}%`]
+        );
+        return result.rows;
+    }else{
+        const result = await pool.query("SELECT * FROM professores");
+        return result.rows;
+    }
 };
 
 const getProfessorById = async (id) => {
@@ -21,8 +29,8 @@ const createProfessor = async (nome, email, photo) => {
 
 const updateProfessor = async (id, nome, email) => {
     const result = await pool.query(
-        "UPDATE professor SET nome = $1, email = $2 WHERE id = $3 RETURNING *",
-        [nome, email, id]
+        'UPDATE professores SET nome = $1, email = $2 WHERE id = $3 RETURNING*',
+    [nome, email, id]
     );
     return result.rows[0];
 };
