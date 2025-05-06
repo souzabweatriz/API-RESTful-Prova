@@ -8,7 +8,6 @@ CREATE TABLE professores (
     email VARCHAR(100) UNIQUE NOT NULL
 );
 
-
 INSERT INTO professores (nome, email) VALUES 
     ('Thiago Ferreira', 'thiago@email.com'),
     ('Marcelo Carboni', 'marcelo@email.com');
